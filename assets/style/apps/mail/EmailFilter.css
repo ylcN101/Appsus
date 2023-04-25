@@ -1,0 +1,39 @@
+.filter-read,
+.filter-trash {
+  display: none;
+}
+
+.filter-container {
+  align-items: center;
+  gap: 1em;
+}
+
+.filter-subject {
+  flex-grow: 1;
+  max-width: 720px;
+  background: #f3f6fc;
+  border-radius: 8px;
+  padding: 5px 20px;
+  margin-left: 1em;
+}
+
+.filter-subject form {
+  position: relative;
+}
+
+.filter-subject input {
+  padding-left: 27px;
+  outline: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  height: 40px;
+  background-color: inherit;
+  border-radius: 8px;
+  display: flex;
+}
+
+.filter-subject i {
+  position: absolute;
+  display: flex;
+  top: 27.5%;
+}

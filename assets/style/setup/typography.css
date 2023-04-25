@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@font-face {
+  font-family: 'googleBold';
+  src: url(./fonts/Google/ProductSans-Bold.ttf);
+}
+@font-face {
+  font-family: 'googleRegular';
+  src: url(./fonts/Google/ProductSans-Regular.ttf);
+}
+@font-face {
+  font-family: 'googleMedium';
+  src: url(./fonts/Google/ProductSans-Medium.ttf);
+}
+@font-face {
+  font-family: 'googleLight';
+  src: url(./fonts/Google/ProductSans-Light.ttf);
+}

@@ -1,0 +1,59 @@
+.logo {
+  height: 35px;
+  /* width: 50px; */
+}
+
+.logo-keep h1 {
+  font-weight: 200;
+}
+
+.logo-keep {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.app-header {
+  gap: 5px;
+  height: 64px;
+}
+
+.notes-filter::placeholder {
+  font-size: 14.3px;
+}
+
+.notes-filter {
+  padding-left: 55px;
+  margin-left: 60px;
+  border-radius: 8px;
+  background-color: #f1f3f4;
+  width: 615px;
+  height: 46px;
+  outline: 0;
+  border: 0;
+}
+
+.notes-filter h1 {
+  font-size: 22px;
+}
+
+.notes-list {
+  margin: -0.05rem 0;
+  height: fit-content;
+}
+
+.notes-list-pinned {
+  margin: -0.05rem 0;
+  height: fit-content;
+}
+
+.glass-icon {
+  top: 25%;
+  left: 31%;
+  position: absolute;
+}
+
+.glass-icon svg {
+  opacity: 0.7;
+}

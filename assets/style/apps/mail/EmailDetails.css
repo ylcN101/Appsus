@@ -1,0 +1,45 @@
+.mail-details {
+  height: 80vh;
+  font-family: 'googleRegular', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+  grid-area: content;
+}
+
+.mail-p {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.mail-details-header h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.mail-details-btns {
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.mail-details-btns i:hover {
+  color: #272222;
+}
+
+.mail-details-btns span {
+  font-size: 1.5em;
+}
+
+.details-arrow:hover {
+  color: #272222;
+}

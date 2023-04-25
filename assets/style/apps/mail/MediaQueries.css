@@ -1,0 +1,14 @@
+@media screen and (max-width: 1065px) {
+  .mail-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+  }
+  .mail-footer {
+    margin-inline-start: auto;
+  }
+  .subject-mail {
+    margin-left: 2em;
+  }
+}

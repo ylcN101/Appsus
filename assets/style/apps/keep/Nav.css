@@ -1,0 +1,17 @@
+.left-nav {
+  width: 80px;
+}
+
+.left-nav svg {
+  opacity: 1;
+}
+
+.fixed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+  padding: 12px;
+  position: sticky;
+  inset: 0;
+}
