@@ -20,6 +20,7 @@
 @import 'apps/mail/EmailFilter.css';
 @import 'apps/mail/EmailCompose.css';
 @import 'apps/mail/EmailDetails.css';
+@import 'apps/mail/MobileHamburger.css';
 @import 'apps/mail/MediaQueries.css';
 
 /* KEEP */
@@ -31,3 +32,8 @@
 @import 'apps/keep/PinnedNotes.css';
 @import 'apps/keep/TakeANote.css';
 @import 'apps/keep/Nav.css';
+
+/* Media Queries */
+
+@import '../style/mediaQueries/homePageMq.css';
+@import '../style/apps/keep/mediaQueries/keepMq.css';

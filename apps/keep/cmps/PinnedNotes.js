@@ -10,7 +10,7 @@ export default {
                 <li class="note" v-for="note in pinnedNotes" :key="note.id">
             
                     <notePreview @removeNote="removeNote"  @click="setSelectedNote(note)"  :notes="pinnedNotes" :note="note" />
-            
+          
                 </li>
             </ul>
 

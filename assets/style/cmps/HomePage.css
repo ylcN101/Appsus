@@ -64,6 +64,10 @@
   width: 30%;
 }
 
+.welcome-btns a:hover {
+  background-color: #174ea6;
+}
+
 .welcome-btns .btn:disabled {
   cursor: default;
 }

@@ -1,11 +1,12 @@
 import { svgService } from '../../../services/svg-service.js'
 import NoteFilter from './NoteFilter.js'
+import AppsModal from '../../../cmps/AppsModal.js'
 
 export default {
   template: `
           <header class="app-header">
               <div className="logo-keep">
-                <div style="padding-top:5px"  v-html="getSvg('bars')" ></div>
+                <div class='burger' style="padding-top:5px"  v-html="getSvg('bars')" ></div>
                 <img class="logo" src='././assets/style/apps/keep/imgs/keep.png' alt="" />
                 <RouterLink to="/"><h1>Appsus</h1></RouterLink>
            
@@ -13,10 +14,17 @@ export default {
            <NoteFilter @filter="setFilterBy" />
             </div>
 
-            <router-link to="/mail"><img class="logo" src='././assets/style/apps/mail/imgs/mail.png' alt="" /></router-link>
+           <img @click="openModal" class="apps-icon" src="../assets/img/apps-icon.png" alt="" />
+           <AppsModal v-show="showModal" />
             
           </header>
       `,
+
+  data() {
+    return {
+      showModal: false,
+    }
+  },
 
   methods: {
     getSvg(iconName) {
@@ -26,9 +34,13 @@ export default {
     setFilterBy(filterBy) {
       this.$emit('setFilter', filterBy)
     },
+    openModal() {
+      this.showModal = !this.showModal
+    },
   },
 
   components: {
     NoteFilter,
+    AppsModal,
   },
 }

@@ -3,6 +3,10 @@
   /* width: 50px; */
 }
 
+.burger svg{
+  cursor: default;
+}
+
 .logo-keep h1 {
   font-weight: 200;
 }

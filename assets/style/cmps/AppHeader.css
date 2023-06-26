@@ -1,4 +1,5 @@
 .app-header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,10 +18,6 @@
   .note {
     max-width: 100px;
   }
-
-  .note:not(:first-of-type) {
-    margin: 0.3rem -3rem !important;
-  }
 }
 
 nav {
@@ -36,4 +33,44 @@ nav {
 .welcome-container h2 {
   font-size: 20px;
   font-weight: 200;
+}
+
+.apps-modal-container {
+  z-index: 20;
+  position: absolute;
+
+  right: 25px;
+  top: 70px;
+  background-color: white;
+  height: 150px;
+  width: 180px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid rgba(223, 222, 222, 0.855);
+}
+
+.modal-tip {
+  position: absolute;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  top: -8px;
+  transform: rotate(45deg);
+  border-top: 1px solid #dadbdd;
+  border-left: 1px solid #dadbdd;
+}
+
+.apps-modal-container ul {
+  list-style-type: none;
+  gap: 10px;
+ justify-content: center;
+}
+
+.apps-modal-container i{
+font-size: 32px;
+}
+
+.apps-icon {
+  cursor: pointer;
+  width: 45px;
 }

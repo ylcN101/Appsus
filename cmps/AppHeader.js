@@ -1,12 +1,28 @@
+import AppsModal from './AppsModal.js'
+
 export default {
   template: `
         <header class="app-header">
-            <RouterLink to="/"><h1>APPSUS</h1></RouterLink>
+            <RouterLink to="/"><h1>Appsus</h1></RouterLink>
             
-            <nav>
-                <router-link to="/noteIndex"><img class="logo" src='././assets/style/apps/keep/imgs/keep.png' alt="" /></router-link>
-                <router-link to="/mail"><img class="logo" src='././assets/style/apps/mail/imgs/mail.png' alt="" /></router-link>
-            </nav>
+            <img @click="openModal" class="apps-icon" src="../assets/img/apps-icon.png" alt="" />
+            <AppsModal v-show="showModal" />
         </header>
     `,
+
+  data() {
+    return {
+      showModal: false,
+    }
+  },
+
+  methods: {
+    openModal() {
+      this.showModal = !this.showModal
+    },
+  },
+
+  components: {
+    AppsModal,
+  },
 }

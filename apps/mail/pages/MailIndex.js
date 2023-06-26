@@ -2,6 +2,7 @@ import { mailService } from '../services/mail.service.js'
 
 import MailList from '../cmps/MailList.js'
 import EmailFolderList from '../cmps/EmailFolderList.js'
+import MobileHamburger from '../cmps/MobileHamburger.js'
 import EmailFilter from '../cmps/EmailFilter.js'
 import MailDetails from './MailDetails.js'
 import MailCompose from './MailCompose.js'
@@ -12,11 +13,7 @@ import { utilService } from '../../../services/util.service.js'
 export default {
   template: `
   <AppHeader/>
-        <section class="mail-index">
-          <div class="mail-nav">
-          <i class="fa-solid fa-pencil"></i>
-            <a @click="OpenCompose">Compose</a>
-          </div>
+        <section class="mail-index" :class="{smallScreen: !largeScreen}">
           <MailCompose v-if="isCompose" @closeCompose="closeCompose" />
           <RouterView />
           <EmailFilter @filtered="setFilter" />
@@ -25,11 +22,10 @@ export default {
           :mails= "filteredMails"
           @selected="selectMail"
           />
-          <EmailFolderList @filtered="setFilter"/>
-
-
+          <MobileHamburger  v-if="!largeScreen" @filtered="setFilter"/>
+          <EmailFolderList  @filtered="setFilter" v-if="largeScreen"/>
         </section>
-        
+
         
     `,
   data() {
@@ -38,9 +34,13 @@ export default {
       filterBy: 'Inbox',
       mail: null,
       isCompose: null,
+      largeScreen: true,
     }
   },
   created() {
+    this.isLargeScreen()
+    window.addEventListener('resize', this.isLargeScreen)
+    console.log('this.isLargeScreen', this.largeScreen)
     this.loadMails()
   },
 
@@ -48,7 +48,6 @@ export default {
     $route(to) {
       if (to.path === '/mail') {
         this.isCompose = false
-        // this.loadMails()
       }
     },
   },
@@ -58,11 +57,12 @@ export default {
       this.filterBy = filterBy
       console.log('filterBy', filterBy)
     },
+
     selectMail(mailId) {
       mailService.updateIsRead(mailId)
     },
     loadMails() {
-      mailService.query().then(mails => {
+      mailService.query().then((mails) => {
         this.mails = mails
       })
     },
@@ -82,37 +82,45 @@ export default {
         this.$router.push('/mail/compose/' + newId)
       }
     },
+
+    isLargeScreen() {
+      if (window.innerWidth > 760) {
+        this.largeScreen = true
+      } else {
+        this.largeScreen = false
+      }
+    },
   },
   computed: {
     filteredMails() {
       this.loadMails()
       const { subject } = this.filterBy
       if (subject) {
-        return this.mails.filter(mail => {
+        return this.mails.filter((mail) => {
           return mail.subject.includes(subject)
         })
       } else if (!this.filterBy) return this.mails
       else if (this.filterBy === 'Trash') {
-        return this.mails.filter(mail => mail.isTrash)
+        return this.mails.filter((mail) => mail.isTrash)
       } else if (this.filterBy === 'Starred') {
         return this.mails.filter(
-          mail => mail.isStared && !mail.isTrash && !mail.isSent
+          (mail) => mail.isStared && !mail.isTrash && !mail.isSent
         )
       } else if (this.filterBy === 'Inbox') {
         return this.mails.filter(
-          mail => !mail.isTrash && !mail.isSent && !mail.isDraft
+          (mail) => !mail.isTrash && !mail.isSent && !mail.isDraft
         )
       } else if (this.filterBy === 'Sent') {
         return this.mails.filter(
-          mail => mail.isSent && !mail.isTrash && !mail.isDraft
+          (mail) => mail.isSent && !mail.isTrash && !mail.isDraft
         )
       } else if (this.filterBy === 'Draft') {
         return this.mails.filter(
-          mail => mail.isDraft && !mail.isTrash && !mail.isSent
+          (mail) => mail.isDraft && !mail.isTrash && !mail.isSent
         )
       } else if (subject === '') {
         return this.mails.filter(
-          mail => !mail.isTrash && !mail.isSent && !mail.isDraft
+          (mail) => !mail.isTrash && !mail.isSent && !mail.isDraft
         )
       }
     },
@@ -125,5 +133,6 @@ export default {
     EmailFilter,
     MailDetails,
     MailCompose,
+    MobileHamburger,
   },
 }

@@ -15,3 +15,12 @@
   position: sticky;
   inset: 0;
 }
+
+.fixed .icon{
+  cursor: default;
+}
+
+.fixed .icon svg{
+cursor: default;
+}
+

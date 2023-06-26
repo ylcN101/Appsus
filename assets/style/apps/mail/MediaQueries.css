@@ -1,14 +1,41 @@
-@media screen and (max-width: 1065px) {
+@media screen and (max-width: 735px) {
   .mail-preview {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
   }
   .mail-footer {
     margin-inline-start: auto;
   }
   .subject-mail {
     margin-left: 2em;
+  }
+  .filter-subject {
+    max-width: 720px;
+    background-color: #f3f6fc;
+    border-radius: 8px;
+    padding: 5px 50px;
+    margin: 0;
+  }
+  .email-filter {
+    margin-top: 1em;
+  }
+  .mail-body {
+    color: #ccc;
+    display: flex;
+    margin-left: 1em;
+  }
+  .subject-mail {
+    margin-left: 1.2em;
+  }
+  .mail-preview h4 {
+    color: black;
+    font-size: 14px;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    min-width: 14em;
+  }
+  .mail-preview {
+    margin-top: 1em;
   }
 }

@@ -1,0 +1,88 @@
+@media (max-width: 768px) {
+  .logo-keep h1 {
+    display: none;
+  }
+
+  .left-nav {
+    display: none;
+  }
+
+  .notes-filter {
+    margin: 0;
+    width: 100%;
+  }
+
+  .glass-icon {
+    left: 34%;
+  }
+
+  .logo-keep {
+    gap: 10px;
+  }
+
+  .app-header {
+    padding: 0.2em 1.2em;
+    gap: 13px;
+  }
+
+  .pinned-notes {
+    padding: 0 !important;
+  }
+
+  .container {
+    column-count: 1 !important;
+    padding: 0 !important;
+    margin-top: 55px;
+  }
+
+  .burger {
+    padding-right: 6px;
+  }
+
+  .pinned,
+  .others {
+    left: 13px;
+  }
+
+  .others {
+    top: -25px;
+  }
+
+  .note-details {
+    width: 340px;
+    padding: 5px;
+  }
+
+  .margined {
+    /* margin-left: 0px; */
+    padding-left: 0px !important;
+    width: auto !important;
+  }
+
+  .rega {
+    margin-left: 10px;
+  }
+
+  .note {
+    max-width: none;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0.5rem 0 !important;
+  }
+
+  .notes-list-pinned {
+    margin-top: 55px;
+  }
+
+  .take-a-note {
+    width: 100%;
+    margin: 0;
+  }
+
+  .keep-flex {
+    max-width: 350px;
+    margin: 20px auto;
+    width: 100%;
+  }
+}

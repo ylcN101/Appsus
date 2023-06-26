@@ -5,7 +5,7 @@ export default {
      <AppHeader/>
         <section class="home-page">
             <div class="welcome-container">
-            <h1>Secure, smart, and easy to use our <br /> apps</h1>
+            <h1>Secure, smart, and easy to use our apps</h1>
             <h2>Get more done with Yuval's Mail or Save your thoughts, wherever you are with Guy's Keep</h2>
             <div className="welcome-btns">
             <router-link class="btn" to="/mail">Start Mail</router-link>

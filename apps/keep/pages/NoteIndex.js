@@ -103,7 +103,6 @@ export default {
 
   created() {
     noteService.query().then(notes => (this.notes = notes))
-    setTimeout(() => console.log(this.notes), 1500)
   },
 
   computed: {

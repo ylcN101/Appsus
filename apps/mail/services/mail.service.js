@@ -88,7 +88,7 @@ function _createMails() {
     lastYear.setDate(lastYear.getDate() - 365)
 
     mails.push(
-      _createMail('Guy@appsus.com', today, false, false, false, true, true)
+      _createMail('Guy@appsus.com', today, false, false, false, false, true)
     )
     mails.push(
       _createMail('Lior@appsus.com', today, false, false, false, true, false)
