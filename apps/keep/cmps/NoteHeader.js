@@ -7,14 +7,14 @@ export default {
           <header class="app-header">
               <div className="logo-keep">
                 <div class='burger' style="padding-top:5px"  v-html="getSvg('bars')" ></div>
-                <img class="logo" src='././assets/style/apps/keep/imgs/keep.png' alt="" />
+                <img class="logo" src='./assets/style/apps/keep/imgs/keep.png' alt="" />
                 <RouterLink to="/"><h1>Appsus</h1></RouterLink>
            
             <div  class="glass-icon" v-html="getSvg('search')" ></div>
            <NoteFilter @filter="setFilterBy" />
             </div>
 
-           <img @click="openModal" class="apps-icon" src="../assets/img/apps-icon.png" alt="" />
+           <img @click="openModal" class="apps-icon" src="./assets/img/apps-icon.png" alt="" />
            <AppsModal v-show="showModal" />
             
           </header>

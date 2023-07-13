@@ -9,12 +9,12 @@ export const storageService = {
 
 function query(entityType, delay = 0) {
   var entities = JSON.parse(localStorage.getItem(entityType)) || []
-  return new Promise(resolve => setTimeout(() => resolve(entities), delay))
+  return new Promise((resolve) => setTimeout(() => resolve(entities), delay))
 }
 
 function get(entityType, entityId) {
-  return query(entityType).then(entities => {
-    const entity = entities.find(entity => entity.id === entityId)
+  return query(entityType).then((entities) => {
+    const entity = entities.find((entity) => entity.id === entityId)
     if (!entity)
       throw new Error(
         `Get failed, cannot find entity with id: ${entityId} in: ${entityType}`
@@ -25,7 +25,7 @@ function get(entityType, entityId) {
 
 function post(entityType, newEntity, append = true) {
   newEntity.id = _makeId()
-  return query(entityType).then(entities => {
+  return query(entityType).then((entities) => {
     append ? entities.push(newEntity) : entities.unshift(newEntity)
     _save(entityType, entities)
     return newEntity
@@ -33,8 +33,8 @@ function post(entityType, newEntity, append = true) {
 }
 
 function put(entityType, updatedEntity) {
-  return query(entityType).then(entities => {
-    const idx = entities.findIndex(entity => entity.id === updatedEntity.id)
+  return query(entityType).then((entities) => {
+    const idx = entities.findIndex((entity) => entity.id === updatedEntity.id)
     entities.splice(idx, 1, updatedEntity)
     _save(entityType, entities)
     return updatedEntity
@@ -42,8 +42,8 @@ function put(entityType, updatedEntity) {
 }
 
 function remove(entityType, entityId) {
-  return query(entityType).then(entities => {
-    const idx = entities.findIndex(entity => entity.id === entityId)
+  return query(entityType).then((entities) => {
+    const idx = entities.findIndex((entity) => entity.id === entityId)
     if (idx < 0) throw new Error(`Unknown Entity ${entityId}`)
     entities.splice(idx, 1)
     _save(entityType, entities)

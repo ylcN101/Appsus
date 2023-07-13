@@ -22,7 +22,6 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 1em;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
   color: #001d35;
